@@ -24,5 +24,4 @@ EXPOSE 53/udp 53/tcp 22
 #ENTRYPOINT ["/usr/bin/supervisord"]
 #CMD /usr/bin/supervisord
 #ENTRYPOINT ["/etc/init.d"]
-CMD pdns start && tail -F /var/log/pdns/error.log
-
+CMD pdns start && service rsyslog start && tail -F /var/log/pdns/error.log 
